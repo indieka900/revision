@@ -8,6 +8,10 @@ class Blog(models.Model):
     content = models.TextField()
     blog_image = models.ImageField(upload_to='blogs/')
     auther_image = models.ImageField(upload_to='authers/')
+    
+    
+    def __str__(self):
+        return self.title
 
 
 # Create your models here.

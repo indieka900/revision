@@ -1,0 +1,126 @@
+{% extends 'layout.html' %} 
+{% block title %} Update blog {% endblock %} 
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h3 class="card-title mb-0">Update Blog Post</h3>
+        </div>
+        <div class="card-body">
+          <form
+            action=""
+            method="post"
+            enctype="multipart/form-data"
+            class="needs-validation"
+            novalidate
+          >
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Blog Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                placeholder="Enter blog title"
+                value="{{blog.title}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <input
+                type="text"
+                class="form-control"
+                id="category"
+                name="category"
+                placeholder="Enter blog category"
+                value="{{blog.category}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="auther_name" class="form-label">Author Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="auther_name"
+                name="auther_name"
+                placeholder="Enter author name"
+                value="{{blog.auther_name}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="date_published" class="form-label"
+                >Publication Date</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="date_published"
+                name="date_published"
+                value="{{blog.date_published}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="content" class="form-label">Blog Content</label>
+              <textarea
+                class="form-control"
+                id="content"
+                name="content"
+                rows="6"
+                placeholder="Write your blog content here..."
+                required
+              >{{blog.content}}</textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="blog_image" class="form-label">Blog Image</label>
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="blog_image"
+                    name="blog_image"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="author_image" class="form-label"
+                    >Author Image</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="author_image"
+                    name="author_image"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Update Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
