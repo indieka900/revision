@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'thirdApp',
 ]
 
+AUTH_USER_MODEL = "thirdApp.CustomUser"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -42,6 +44,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+
 
 TEMPLATES = [
     {

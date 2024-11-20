@@ -44,8 +44,6 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Arsha</h1>
       </a>
 
@@ -79,7 +77,20 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+      {% if user.is_authenticated %}
+      <div class="d-flex align-items-center gap-3">
+        <div class="user-profile d-flex align-items-center">
+          <img src="{{ user.profile_pic.url }}" alt="Profile" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;">
+          <span class="username">{{ user.username }}</span>
+        </div>
+        <!-- <a href="{% url 'logout' %}" class="btn-getstarted">Logout</a> -->
+      </div>
+      {% else %}
+      <!-- <div class="d-flex gap-2">
+        <a href="{% url 'login' %}" class="btn-getstarted">Login</a>
+        <a href="{% url 'register' %}" class="btn-getstarted">Register</a>
+      </div> -->
+      {% endif %}
 
     </div>
   </header>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
 class Team(models.Model):
@@ -13,3 +14,7 @@ class Team(models.Model):
 
     def __str__(self):
         return f"{self.full_name} --- {self.position}"
+    
+class CustomUser(AbstractUser):
+    phone_number = models.CharField(max_length=14, blank=True, null=True)
+    profile_pic = models.ImageField(upload_to='users/', default='profile.png')
