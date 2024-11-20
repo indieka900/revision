@@ -13,17 +13,16 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def user_registration(request):
+def user_registration(request):  # sourcery skip: extract-method
     form = RegistrationForm()
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        print(form.username) 
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
-            # messages.success(request, 'You have singed up successfully.')
-            # login(request, user)
+            messages.success(request, 'You have singed up successfully.')
+            login(request, user)
             return redirect('/')
     return render(request, 'registration_form.html', {'form': form})
 
