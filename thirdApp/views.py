@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Team, CustomUser
+from .models import Team, CustomUser, Contact
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
-from .forms import RegistrationForm, LoginForm
+from thirdApp.utils import send_registration_email
+from .forms import RegistrationForm, LoginForm, ContactForm
 
 @login_required(login_url='login')
 def index(request):
@@ -19,6 +20,8 @@ def user_registration(request):  # sourcery skip: extract-method
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
+            # send registration email
+            send_registration_email(user)
             user.username = user.username.lower()
             user.save()
             messages.success(request, 'You have singed up successfully.')
@@ -54,4 +57,13 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
-# Create your views here.
+
+def contuct_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            c_form = form.save(commit=False)
+            # send registration email
+            # send_registration_email(user)
+            c_form.save()
+            return redirect('/')

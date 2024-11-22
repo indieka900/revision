@@ -2,3 +2,4 @@
 /secondApp
 /thirdApp/static
 .venv
+.env

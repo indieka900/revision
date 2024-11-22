@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .email-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 50px;
+            background-color: #4A90E2;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .content {
+            margin-bottom: 30px;
+        }
+
+        .greeting {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .footer {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            margin: 5px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4A90E2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo">COMPANY NAME</div>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">Dear {{username}},</div>
+            
+            <div class="message">
+                Thank you for registering with our system! We're excited to have you on board and look forward to helping you make the most of our services.
+            </div>
+
+            <div class="message">
+                To get started, you can:
+                <ul>
+                    <li>Complete your profile</li>
+                    <li>Explore our features</li>
+                    <li>Check out our getting started guide</li>
+                </ul>
+            </div>
+
+            <center>
+                <a href="#" class="button">Get Started</a>
+            </center>
+
+            <div class="message">
+                If you have any questions or need assistance, please don't hesitate to reach out to our support team.
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>Best Regards,</div>
+            <div class="contact-info">
+                <div class="contact-item"><strong>Joseph</strong></div>
+                <div class="contact-item">Customer Success Manager</div>
+                <div class="contact-item">Phone: 0713283900</div>
+                <div class="contact-item">Email: support@company.com</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
