@@ -8,5 +8,6 @@ urlpatterns = [
     # path('', include('firstApp.urls')),
     path('', include('thirdApp.urls')),
     # path('app2/', include('secondApp.urls')),
+    path('stk/', include('stk.urls'))
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
