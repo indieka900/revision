@@ -15,7 +15,6 @@ class MpesaAccessToken:
         auth=HTTPBasicAuth(MpesaCredentials.consumer_key, MpesaCredentials.consumer_secret)
         )
     mpesa_access_token = json.loads(r.text)['access_token']
-    print(f"Access token {mpesa_access_token}")
     
 class MpesaPassword:
     pay_time = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -23,8 +22,5 @@ class MpesaPassword:
     offset_value = '0'
     passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
     data_to_encode = business_short_code + passkey + pay_time
-    print(f"data to encode {data_to_encode}")
     password = base64.b64encode(data_to_encode.encode())
-    print(f"Password {password}")
     decode_password = password.decode('utf-8')
-    print(f"Decoded password {decode_password}")
